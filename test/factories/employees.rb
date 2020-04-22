@@ -7,5 +7,10 @@ FactoryBot.define do
     phone { rand(10 ** 10).to_s.rjust(10,'0') }
     role { 'employee' }
     active { true }
+    sequence :username do |n|
+      "user#{n}"
+    end
+    password { 'secret' }
+    password_confirmation { 'secret' }
   end
 end

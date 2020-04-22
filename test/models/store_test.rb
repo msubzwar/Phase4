@@ -5,6 +5,7 @@ class StoreTest < ActiveSupport::TestCase
   # Matchers
   should have_many(:assignments)
   should have_many(:employees).through(:assignments)
+  should have_many(:shifts).through(:assignments) 
 
   # Test basic validations
   should validate_presence_of(:name)
@@ -42,29 +43,24 @@ class StoreTest < ActiveSupport::TestCase
 
   # Context
   context "Given context" do
-    setup do
+    setup do 
       create_stores
     end
-
+    
     teardown do
-      destroy_stores
-    end
-
-
-    should "DO NOT REMOVE: AUTOGRADING" do
-      assert_equal -3554384015922413861, @hazelwood.certify_autograde
+      # destroy_stores
     end
 
     # test the scope 'active'
     should "have all active stores accounted for" do
-      assert_equal 2, Store.active.size
+      assert_equal 2, Store.active.size 
       deny Store.active.include?(@hazelwood)
       assert_equal [@cmu,@oakland], Store.active.sort_by{|store| store.name}
     end
 
     # test the scope 'inactive'
     should "have all inactive stores accounted for" do
-      assert_equal 1, Store.inactive.size
+      assert_equal 1, Store.inactive.size 
       deny Store.inactive.include?(@cmu)
       assert_equal [@hazelwood], Store.inactive
     end
@@ -95,6 +91,10 @@ class StoreTest < ActiveSupport::TestCase
       assert_equal "4122688211", @oakland.phone
     end
 
+    # test that stores cannot be destroyed
+    should "not allow stores to be destroyed for any reason" do
+      deny @oakland.destroy
+    end
 
   end
 end

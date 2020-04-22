@@ -2,7 +2,8 @@ class Store < ApplicationRecord
 
   # Relationships
   has_many :assignments
-  has_many :employees, through: :assignments
+  has_many :employees,  through: :assignments
+  has_many :shifts,     through: :assignments
 
   # Scopes
   scope :alphabetical, -> { order('name') }
@@ -34,17 +35,19 @@ class Store < ApplicationRecord
 
   # Callbacks
   before_save :reformat_phone
+  before_destroy :destroy?
 
   # Misc Constants
   STATES_LIST = [['Ohio', 'OH'],['Pennsylvania', 'PA'],['West Virginia', 'WV']]
 
-  def certify_autograde
-    return -3554384015922413861
-  end
 
   private
   def reformat_phone
     self.phone = self.phone.to_s.gsub(/[^0-9]/,"")
   end
+
+    def destroy?
+        throw(:abort)
+    end
 
 end

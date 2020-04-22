@@ -1,54 +1,47 @@
 class AssignmentsController < ApplicationController
-    before_action :set_employee, only: [:show, :edit, :update, :destroy]
-    
-    def index
-        @assignments = Assignment.paginate(:page => params[:page]).per_page(10)
-    end
+  before_action :set_assignment, only: [:show, :edit, :terminate, :destroy]
 
-    def show
+  def index
+    # for phase 3 only
+      @current_assignments = Assignment.current.chronological.paginate(page: params[:page]).per_page(10)
+      @past_assignments = Assignment.past.chronological.paginate(page: params[:page]).per_page(10)
+  end
 
-    end
-    
-    def edit
-    
-    end
-    
-    def new
-        @assignments = Assignment.new
-    end
-    
+  def new
+    @assignment = Assignment.new
+    @assignment.employee_id = params[:employee_id] unless params[:employee_id].nil?
+  end
 
   def create
-    @assignments = Assignment.new(assignment_params)
-    if @assignments.save
-        
-      redirect_to employee_path(@assignments), notice: "#{@assignments.start_date} was added to the system."
+    @assignment = Assignment.new(assignment_params)
+    if @assignment.save
+      redirect_to assignments_path, notice: "Successfully added the assignment."
     else
       render action: 'new'
     end
   end
 
-  def update
-    if @assignments.update(assignment_params)
-        
-      redirect_to employee_path(@asg), notice: "#{@asg.start_date} was revised in the system."
-    
-    else
-      render action: 'edit'
+  def terminate
+    if @assignment.terminate
+      redirect_to assignments_path, notice: "Assignment for #{@assignment.employee.proper_name} terminated."
     end
   end
+
   def destroy
-    @assignments.destroy
-    redirect_to assignments_url
+    @assignment.destroy
+    redirect_to assignments_path, notice: "Removed assignment from the system."
   end
-  
-    private
-    def assignment_params
-        params.require(:assignments).permit(:start_date, :end_date, :active)
-    end
-    
-     def set_assignment 
-        @categories = Category.find(params[:id]) 
-     end
-     
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_assignment
+    @assignment = Assignment.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def assignment_params
+    params.require(:assignment).permit(:store_id, :employee_id, :start_date)
+  end
+
 end
+
