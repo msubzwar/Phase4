@@ -30,5 +30,20 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    user ||= User.new # guest user (not logged in)
+    
+      if user.role? :admin
+        can :manage, :all
+      elsif user.role? :manager
+        can :index, Employees 
+        can :edit , Employees
+        # can :delete, Shift
+        can :show, Shifts
+        can :index, Shifts
+        
+    end
+
+  
+  
   end
 end

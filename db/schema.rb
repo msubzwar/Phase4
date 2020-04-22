@@ -63,14 +63,10 @@ ActiveRecord::Schema.define(version: 2020_04_22_174010) do
   create_table "shift_jobs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "shift_id_id"
-    t.integer "job_id_id"
     t.integer "job_id"
     t.integer "shift_id"
     t.index ["job_id"], name: "index_shift_jobs_on_job_id"
-    t.index ["job_id_id"], name: "index_shift_jobs_on_job_id_id"
     t.index ["shift_id"], name: "index_shift_jobs_on_shift_id"
-    t.index ["shift_id_id"], name: "index_shift_jobs_on_shift_id_id"
   end
 
   create_table "shifts", force: :cascade do |t|

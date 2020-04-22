@@ -16,7 +16,7 @@ module Creamery
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += Dir["#{config.root}/lib/**/"]  # include all subdirectories
 
-    config.time_zone = 'Eastern Time (US & Canada)'
-    # config.active_record.default_timezone = :local
+    #nfig.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.default_timezone = :local
   end
 end

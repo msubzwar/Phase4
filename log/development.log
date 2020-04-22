@@ -3400,3 +3400,351 @@ D, [2020-04-22T19:02:35.848803 #3128] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[
 D, [2020-04-22T19:02:35.849116 #3128] DEBUG -- :   ↳ bin/rails:9
 D, [2020-04-22T19:02:35.850783 #3128] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 D, [2020-04-22T19:02:35.850975 #3128] DEBUG -- :   ↳ bin/rails:9
+D, [2020-04-22T19:25:59.218928 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+D, [2020-04-22T19:25:59.219286 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:11
+D, [2020-04-22T19:25:59.223129 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+D, [2020-04-22T19:25:59.223365 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:11
+D, [2020-04-22T19:25:59.224604 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+D, [2020-04-22T19:25:59.224833 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:11
+D, [2020-04-22T19:25:59.226197 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+D, [2020-04-22T19:25:59.226352 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:11
+D, [2020-04-22T19:25:59.227563 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+D, [2020-04-22T19:25:59.227716 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:11
+D, [2020-04-22T19:25:59.228882 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+D, [2020-04-22T19:25:59.229037 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:11
+D, [2020-04-22T19:25:59.251405 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+D, [2020-04-22T19:25:59.251547 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.257187 #5048] DEBUG -- :   [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+D, [2020-04-22T19:25:59.257411 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.263720 #5048] DEBUG -- :   [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.264110 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.266849 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+D, [2020-04-22T19:25:59.267132 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.268033 #5048]  INFO -- : Migrating to CreateEmployees (20191101135643)
+D, [2020-04-22T19:25:59.271255 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.271513 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.273618 #5048] DEBUG -- :   [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "employees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "ssn" varchar, "date_of_birth" date, "phone" varchar, "role" varchar, "active" boolean)[0m
+D, [2020-04-22T19:25:59.273956 #5048] DEBUG -- :   ↳ db/migrate/20191101135643_create_employees.rb:3
+D, [2020-04-22T19:25:59.279213 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191101135643"]]
+D, [2020-04-22T19:25:59.279408 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.285193 #5048] DEBUG -- :   [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.285399 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.285735 #5048]  INFO -- : Migrating to CreateStores (20191101140046)
+D, [2020-04-22T19:25:59.286341 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.287574 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.290570 #5048] DEBUG -- :   [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "stores" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "street" varchar, "city" varchar, "state" varchar, "zip" varchar, "phone" varchar, "active" boolean)[0m
+D, [2020-04-22T19:25:59.291125 #5048] DEBUG -- :   ↳ db/migrate/20191101140046_create_stores.rb:3
+D, [2020-04-22T19:25:59.293769 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191101140046"]]
+D, [2020-04-22T19:25:59.294053 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.299616 #5048] DEBUG -- :   [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.299814 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.301029 #5048]  INFO -- : Migrating to CreateAssignments (20191101143940)
+D, [2020-04-22T19:25:59.301719 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.301913 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.303447 #5048] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "store_id" integer NOT NULL, "employee_id" integer NOT NULL, "start_date" date, "end_date" date, CONSTRAINT "fk_rails_75f2a1d3e5"
+FOREIGN KEY ("store_id")
+  REFERENCES "stores" ("id")
+, CONSTRAINT "fk_rails_d0980e430f"
+FOREIGN KEY ("employee_id")
+  REFERENCES "employees" ("id")
+)[0m
+D, [2020-04-22T19:25:59.303621 #5048] DEBUG -- :   ↳ db/migrate/20191101143940_create_assignments.rb:3
+D, [2020-04-22T19:25:59.306341 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assignments_on_store_id" ON "assignments" ("store_id")[0m
+D, [2020-04-22T19:25:59.306561 #5048] DEBUG -- :   ↳ db/migrate/20191101143940_create_assignments.rb:3
+D, [2020-04-22T19:25:59.309430 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assignments_on_employee_id" ON "assignments" ("employee_id")[0m
+D, [2020-04-22T19:25:59.309514 #5048] DEBUG -- :   ↳ db/migrate/20191101143940_create_assignments.rb:3
+D, [2020-04-22T19:25:59.310627 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191101143940"]]
+D, [2020-04-22T19:25:59.310764 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.315117 #5048] DEBUG -- :   [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.315247 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.316359 #5048]  INFO -- : Migrating to CreateShifts (20200422144542)
+D, [2020-04-22T19:25:59.317006 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.317156 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.318278 #5048] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "shifts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assignment_id" integer, "date" date, "start_time" time, "end_time" time, "notes" text, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_76d81d489d"
+FOREIGN KEY ("assignment_id")
+  REFERENCES "assignments" ("id")
+)[0m
+D, [2020-04-22T19:25:59.318410 #5048] DEBUG -- :   ↳ db/migrate/20200422144542_create_shifts.rb:3
+D, [2020-04-22T19:25:59.320446 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_shifts_on_assignment_id" ON "shifts" ("assignment_id")[0m
+D, [2020-04-22T19:25:59.320612 #5048] DEBUG -- :   ↳ db/migrate/20200422144542_create_shifts.rb:3
+D, [2020-04-22T19:25:59.321584 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422144542"]]
+D, [2020-04-22T19:25:59.321724 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.326207 #5048] DEBUG -- :   [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.326346 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.327386 #5048]  INFO -- : Migrating to AddUsernameToEmployee (20200422153241)
+D, [2020-04-22T19:25:59.327880 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.327966 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.328747 #5048] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "employees" ADD "username" varchar[0m
+D, [2020-04-22T19:25:59.328887 #5048] DEBUG -- :   ↳ db/migrate/20200422153241_add_username_to_employee.rb:3
+D, [2020-04-22T19:25:59.330178 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422153241"]]
+D, [2020-04-22T19:25:59.330356 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.333550 #5048] DEBUG -- :   [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.333726 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.334961 #5048]  INFO -- : Migrating to AddPasswordDigestToEmployee (20200422153431)
+D, [2020-04-22T19:25:59.335471 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.335551 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.336302 #5048] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "employees" ADD "password_digest" varchar[0m
+D, [2020-04-22T19:25:59.336376 #5048] DEBUG -- :   ↳ db/migrate/20200422153431_add_password_digest_to_employee.rb:3
+D, [2020-04-22T19:25:59.337238 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422153431"]]
+D, [2020-04-22T19:25:59.338029 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.341349 #5048] DEBUG -- :   [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.341486 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.342586 #5048]  INFO -- : Migrating to CreatePayGrades (20200422154527)
+D, [2020-04-22T19:25:59.343226 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.343359 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.344607 #5048] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "pay_grades" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "level" varchar, "active" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.344752 #5048] DEBUG -- :   ↳ db/migrate/20200422154527_create_pay_grades.rb:3
+D, [2020-04-22T19:25:59.346269 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422154527"]]
+D, [2020-04-22T19:25:59.346415 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.351750 #5048] DEBUG -- :   [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.353830 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.355413 #5048]  INFO -- : Migrating to AddPayGradeToAssignments (20200422155006)
+D, [2020-04-22T19:25:59.356125 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.356237 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.357350 #5048] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "assignments" ADD "pay_grade_id" integer[0m
+D, [2020-04-22T19:25:59.357500 #5048] DEBUG -- :   ↳ db/migrate/20200422155006_add_pay_grade_to_assignments.rb:3
+D, [2020-04-22T19:25:59.361480 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assignments_on_pay_grade_id" ON "assignments" ("pay_grade_id")[0m
+D, [2020-04-22T19:25:59.361702 #5048] DEBUG -- :   ↳ db/migrate/20200422155006_add_pay_grade_to_assignments.rb:3
+D, [2020-04-22T19:25:59.363676 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422155006"]]
+D, [2020-04-22T19:25:59.363802 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.369088 #5048] DEBUG -- :   [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.369265 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.370256 #5048]  INFO -- : Migrating to CreatePayGradeRates (20200422162712)
+D, [2020-04-22T19:25:59.370786 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.370864 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.371807 #5048] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "pay_grade_rates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rate" float, "start_date" date, "end_date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.371886 #5048] DEBUG -- :   ↳ db/migrate/20200422162712_create_pay_grade_rates.rb:3
+D, [2020-04-22T19:25:59.372778 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422162712"]]
+D, [2020-04-22T19:25:59.372925 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.377800 #5048] DEBUG -- :   [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.378016 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.378859 #5048]  INFO -- : Migrating to AddPayGradeToPayGradeRate (20200422162813)
+D, [2020-04-22T19:25:59.379319 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.379433 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.380246 #5048] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pay_grade_rates" ADD "pay_grade_id" integer[0m
+D, [2020-04-22T19:25:59.380343 #5048] DEBUG -- :   ↳ db/migrate/20200422162813_add_pay_grade_to_pay_grade_rate.rb:3
+D, [2020-04-22T19:25:59.394895 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_pay_grade_rates_on_pay_grade_id" ON "pay_grade_rates" ("pay_grade_id")[0m
+D, [2020-04-22T19:25:59.395521 #5048] DEBUG -- :   ↳ db/migrate/20200422162813_add_pay_grade_to_pay_grade_rate.rb:3
+D, [2020-04-22T19:25:59.396550 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422162813"]]
+D, [2020-04-22T19:25:59.396634 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.403605 #5048] DEBUG -- :   [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.403752 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.405133 #5048]  INFO -- : Migrating to CreateJobs (20200422170538)
+D, [2020-04-22T19:25:59.405698 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.405789 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.406996 #5048] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "active" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.407126 #5048] DEBUG -- :   ↳ db/migrate/20200422170538_create_jobs.rb:3
+D, [2020-04-22T19:25:59.408023 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422170538"]]
+D, [2020-04-22T19:25:59.408141 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.415438 #5048] DEBUG -- :   [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.415716 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.416444 #5048]  INFO -- : Migrating to CreateShiftJobs (20200422170645)
+D, [2020-04-22T19:25:59.417387 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.417579 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.421132 #5048] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "shift_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.421323 #5048] DEBUG -- :   ↳ db/migrate/20200422170645_create_shift_jobs.rb:3
+D, [2020-04-22T19:25:59.423424 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422170645"]]
+D, [2020-04-22T19:25:59.423533 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.429142 #5048] DEBUG -- :   [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.429352 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.430398 #5048]  INFO -- : Migrating to RemoveShiftToShiftJob (20200422173746)
+D, [2020-04-22T19:25:59.431014 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.431123 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.433089 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422173746"]]
+D, [2020-04-22T19:25:59.433606 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.441510 #5048] DEBUG -- :   [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.442184 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.442513 #5048]  INFO -- : Migrating to RemoveJobToShiftJob (20200422173824)
+D, [2020-04-22T19:25:59.442915 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.443001 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.444997 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422173824"]]
+D, [2020-04-22T19:25:59.445406 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.448992 #5048] DEBUG -- :   [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.449701 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.450114 #5048]  INFO -- : Migrating to AddJobToShiftJob (20200422173937)
+D, [2020-04-22T19:25:59.450566 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.450679 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.452532 #5048] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "shift_jobs" ADD "job_id" integer[0m
+D, [2020-04-22T19:25:59.452916 #5048] DEBUG -- :   ↳ db/migrate/20200422173937_add_job_to_shift_job.rb:3
+D, [2020-04-22T19:25:59.454438 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_shift_jobs_on_job_id" ON "shift_jobs" ("job_id")[0m
+D, [2020-04-22T19:25:59.454587 #5048] DEBUG -- :   ↳ db/migrate/20200422173937_add_job_to_shift_job.rb:3
+D, [2020-04-22T19:25:59.456361 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422173937"]]
+D, [2020-04-22T19:25:59.456985 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.461677 #5048] DEBUG -- :   [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.462552 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+I, [2020-04-22T19:25:59.462972 #5048]  INFO -- : Migrating to AddShiftToShiftJob (20200422174010)
+D, [2020-04-22T19:25:59.463489 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.463609 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.465292 #5048] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "shift_jobs" ADD "shift_id" integer[0m
+D, [2020-04-22T19:25:59.465681 #5048] DEBUG -- :   ↳ db/migrate/20200422174010_add_shift_to_shift_job.rb:3
+D, [2020-04-22T19:25:59.468264 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_shift_jobs_on_shift_id" ON "shift_jobs" ("shift_id")[0m
+D, [2020-04-22T19:25:59.468385 #5048] DEBUG -- :   ↳ db/migrate/20200422174010_add_shift_to_shift_job.rb:3
+D, [2020-04-22T19:25:59.470498 #5048] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422174010"]]
+D, [2020-04-22T19:25:59.470791 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.478507 #5048] DEBUG -- :   [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.479631 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.481672 #5048] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.481975 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.488207 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.488370 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.489986 #5048] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-22 19:25:59.488960"], ["updated_at", "2020-04-22 19:25:59.488960"]]
+D, [2020-04-22T19:25:59.490277 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.496867 #5048] DEBUG -- :   [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.497173 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.510193 #5048] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+D, [2020-04-22T19:25:59.510390 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:13
+D, [2020-04-22T19:25:59.543500 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+D, [2020-04-22T19:25:59.543631 #5048] DEBUG -- :   ↳ db/schema.rb:15
+D, [2020-04-22T19:25:59.544098 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+D, [2020-04-22T19:25:59.544183 #5048] DEBUG -- :   ↳ db/schema.rb:15
+D, [2020-04-22T19:25:59.549228 #5048] DEBUG -- :   [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "store_id" integer NOT NULL, "employee_id" integer NOT NULL, "start_date" date, "end_date" date, "pay_grade_id" integer)[0m
+D, [2020-04-22T19:25:59.549391 #5048] DEBUG -- :   ↳ db/schema.rb:15
+D, [2020-04-22T19:25:59.556852 #5048] DEBUG -- :   [1m[35m (4.8ms)[0m  [1m[35mCREATE  INDEX "index_assignments_on_employee_id" ON "assignments" ("employee_id")[0m
+D, [2020-04-22T19:25:59.557006 #5048] DEBUG -- :   ↳ db/schema.rb:15
+D, [2020-04-22T19:25:59.563395 #5048] DEBUG -- :   [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX "index_assignments_on_pay_grade_id" ON "assignments" ("pay_grade_id")[0m
+D, [2020-04-22T19:25:59.565191 #5048] DEBUG -- :   ↳ db/schema.rb:15
+D, [2020-04-22T19:25:59.574179 #5048] DEBUG -- :   [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX "index_assignments_on_store_id" ON "assignments" ("store_id")[0m
+D, [2020-04-22T19:25:59.574652 #5048] DEBUG -- :   ↳ db/schema.rb:15
+D, [2020-04-22T19:25:59.576211 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "employees"[0m
+D, [2020-04-22T19:25:59.576418 #5048] DEBUG -- :   ↳ db/schema.rb:26
+D, [2020-04-22T19:25:59.580479 #5048] DEBUG -- :   [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "employees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "ssn" varchar, "date_of_birth" date, "phone" varchar, "role" varchar, "active" boolean, "username" varchar, "password_digest" varchar)[0m
+D, [2020-04-22T19:25:59.580642 #5048] DEBUG -- :   ↳ db/schema.rb:26
+D, [2020-04-22T19:25:59.581942 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "jobs"[0m
+D, [2020-04-22T19:25:59.582149 #5048] DEBUG -- :   ↳ db/schema.rb:38
+D, [2020-04-22T19:25:59.585591 #5048] DEBUG -- :   [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "active" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.585754 #5048] DEBUG -- :   ↳ db/schema.rb:38
+D, [2020-04-22T19:25:59.587169 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pay_grade_rates"[0m
+D, [2020-04-22T19:25:59.587370 #5048] DEBUG -- :   ↳ db/schema.rb:46
+D, [2020-04-22T19:25:59.591246 #5048] DEBUG -- :   [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "pay_grade_rates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rate" float, "start_date" date, "end_date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "pay_grade_id" integer)[0m
+D, [2020-04-22T19:25:59.591446 #5048] DEBUG -- :   ↳ db/schema.rb:46
+D, [2020-04-22T19:25:59.596574 #5048] DEBUG -- :   [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX "index_pay_grade_rates_on_pay_grade_id" ON "pay_grade_rates" ("pay_grade_id")[0m
+D, [2020-04-22T19:25:59.596695 #5048] DEBUG -- :   ↳ db/schema.rb:46
+D, [2020-04-22T19:25:59.598772 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pay_grades"[0m
+D, [2020-04-22T19:25:59.598946 #5048] DEBUG -- :   ↳ db/schema.rb:56
+D, [2020-04-22T19:25:59.603547 #5048] DEBUG -- :   [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "pay_grades" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "level" varchar, "active" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.603726 #5048] DEBUG -- :   ↳ db/schema.rb:56
+D, [2020-04-22T19:25:59.605619 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "shift_jobs"[0m
+D, [2020-04-22T19:25:59.605901 #5048] DEBUG -- :   ↳ db/schema.rb:63
+D, [2020-04-22T19:25:59.609643 #5048] DEBUG -- :   [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "shift_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "job_id" integer, "shift_id" integer)[0m
+D, [2020-04-22T19:25:59.609788 #5048] DEBUG -- :   ↳ db/schema.rb:63
+D, [2020-04-22T19:25:59.616274 #5048] DEBUG -- :   [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX "index_shift_jobs_on_job_id" ON "shift_jobs" ("job_id")[0m
+D, [2020-04-22T19:25:59.616603 #5048] DEBUG -- :   ↳ db/schema.rb:63
+D, [2020-04-22T19:25:59.624334 #5048] DEBUG -- :   [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX "index_shift_jobs_on_shift_id" ON "shift_jobs" ("shift_id")[0m
+D, [2020-04-22T19:25:59.624679 #5048] DEBUG -- :   ↳ db/schema.rb:63
+D, [2020-04-22T19:25:59.626676 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "shifts"[0m
+D, [2020-04-22T19:25:59.626885 #5048] DEBUG -- :   ↳ db/schema.rb:72
+D, [2020-04-22T19:25:59.631324 #5048] DEBUG -- :   [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "shifts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assignment_id" integer, "date" date, "start_time" time, "end_time" time, "notes" text, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.631446 #5048] DEBUG -- :   ↳ db/schema.rb:72
+D, [2020-04-22T19:25:59.635952 #5048] DEBUG -- :   [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX "index_shifts_on_assignment_id" ON "shifts" ("assignment_id")[0m
+D, [2020-04-22T19:25:59.637040 #5048] DEBUG -- :   ↳ db/schema.rb:72
+D, [2020-04-22T19:25:59.638880 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "stores"[0m
+D, [2020-04-22T19:25:59.639110 #5048] DEBUG -- :   ↳ db/schema.rb:84
+D, [2020-04-22T19:25:59.643813 #5048] DEBUG -- :   [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "stores" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "street" varchar, "city" varchar, "state" varchar, "zip" varchar, "phone" varchar, "active" boolean)[0m
+D, [2020-04-22T19:25:59.643964 #5048] DEBUG -- :   ↳ db/schema.rb:84
+D, [2020-04-22T19:25:59.649513 #5048] DEBUG -- :   [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+D, [2020-04-22T19:25:59.649755 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.651840 #5048] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+D, [2020-04-22T19:25:59.652028 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.656624 #5048] DEBUG -- :   [1m[35m (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200422174010)[0m
+D, [2020-04-22T19:25:59.656783 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.661525 #5048] DEBUG -- :   [1m[35m (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200422153241),
+(20200422170645),
+(20200422173824),
+(20200422162813),
+(20191101140046),
+(20200422170538),
+(20200422162712),
+(20200422155006),
+(20200422144542),
+(20200422173746),
+(20200422173937),
+(20200422153431),
+(20191101143940),
+(20200422154527),
+(20191101135643);
+
+[0m
+D, [2020-04-22T19:25:59.661927 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.668941 #5048] DEBUG -- :   [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2020-04-22T19:25:59.669234 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.671733 #5048] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.671951 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.672783 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.672873 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.674256 #5048] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-22 19:25:59.673423"], ["updated_at", "2020-04-22 19:25:59.673423"]]
+D, [2020-04-22T19:25:59.674417 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.679249 #5048] DEBUG -- :   [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.681345 #5048] DEBUG -- :   ↳ db/schema.rb:13
+D, [2020-04-22T19:25:59.682940 #5048] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.683060 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:14
+D, [2020-04-22T19:25:59.684485 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.684628 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:14
+D, [2020-04-22T19:25:59.686189 #5048] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-04-22 19:25:59.685216"], ["key", "environment"]]
+D, [2020-04-22T19:25:59.686343 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:14
+D, [2020-04-22T19:25:59.690043 #5048] DEBUG -- :   [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.690173 #5048] DEBUG -- :   ↳ lib/tasks/populate.rake:14
+D, [2020-04-22T19:25:59.708336 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.708469 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.709841 #5048] DEBUG -- :   [1m[36mStore Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "stores" WHERE LOWER("stores"."name") = LOWER(?) LIMIT ?[0m  [["name", "Carnegie Mellon"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.709981 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.711261 #5048] DEBUG -- :   [1m[36mStore Create (0.3ms)[0m  [1m[32mINSERT INTO "stores" ("name", "street", "city", "state", "zip", "phone", "active") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Carnegie Mellon"], ["street", "4800 Forbes Avenue"], ["city", "Pittsburgh"], ["state", "PA"], ["zip", "15213"], ["phone", "8445664604"], ["active", 1]]
+D, [2020-04-22T19:25:59.711354 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.716019 #5048] DEBUG -- :   [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.716129 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.719320 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.719508 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.720317 #5048] DEBUG -- :   [1m[36mStore Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "stores" WHERE LOWER("stores"."name") = LOWER(?) LIMIT ?[0m  [["name", "Convention Center"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.720431 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.721430 #5048] DEBUG -- :   [1m[36mStore Create (0.2ms)[0m  [1m[32mINSERT INTO "stores" ("name", "street", "city", "state", "zip", "phone", "active") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Convention Center"], ["street", "1000 Fort Duquesne Blvd"], ["city", "Pittsburgh"], ["state", "PA"], ["zip", "15222"], ["phone", "8072754927"], ["active", 1]]
+D, [2020-04-22T19:25:59.721687 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.725748 #5048] DEBUG -- :   [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.726030 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.727478 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.727582 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.728575 #5048] DEBUG -- :   [1m[36mStore Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "stores" WHERE LOWER("stores"."name") = LOWER(?) LIMIT ?[0m  [["name", "Point State Park"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.728672 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.729726 #5048] DEBUG -- :   [1m[36mStore Create (0.2ms)[0m  [1m[32mINSERT INTO "stores" ("name", "street", "city", "state", "zip", "phone", "active") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Point State Park"], ["street", "101 Commonwealth Place"], ["city", "Pittsburgh"], ["state", "PA"], ["zip", "15222"], ["phone", "3604560333"], ["active", 1]]
+D, [2020-04-22T19:25:59.729957 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.735329 #5048] DEBUG -- :   [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.735794 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.737258 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.737448 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.738481 #5048] DEBUG -- :   [1m[36mStore Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "stores" WHERE LOWER("stores"."name") = LOWER(?) LIMIT ?[0m  [["name", "Greenfield"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.738635 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.739834 #5048] DEBUG -- :   [1m[36mStore Create (0.3ms)[0m  [1m[32mINSERT INTO "stores" ("name", "street", "city", "state", "zip", "phone", "active") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Greenfield"], ["street", "3981 Beachwood Blvd"], ["city", "Pittsburgh"], ["state", "PA"], ["zip", "15217"], ["phone", "2452996039"], ["active", 1]]
+D, [2020-04-22T19:25:59.740029 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.744915 #5048] DEBUG -- :   [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.745221 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.746673 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.746871 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.747840 #5048] DEBUG -- :   [1m[36mStore Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "stores" WHERE LOWER("stores"."name") = LOWER(?) LIMIT ?[0m  [["name", "Oakland"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.747931 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.749046 #5048] DEBUG -- :   [1m[36mStore Create (0.2ms)[0m  [1m[32mINSERT INTO "stores" ("name", "street", "city", "state", "zip", "phone", "active") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Oakland"], ["street", "135 N Bellefield Ave"], ["city", "Pittsburgh"], ["state", "PA"], ["zip", "15260"], ["phone", "4780359705"], ["active", 1]]
+D, [2020-04-22T19:25:59.749214 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.754026 #5048] DEBUG -- :   [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.754320 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.756026 #5048] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.756290 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.758118 #5048] DEBUG -- :   [1m[36mStore Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "stores" WHERE LOWER("stores"."name") = LOWER(?) LIMIT ?[0m  [["name", "Shadyside"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.758298 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.760511 #5048] DEBUG -- :   [1m[36mStore Create (0.5ms)[0m  [1m[32mINSERT INTO "stores" ("name", "street", "city", "state", "zip", "phone", "active") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shadyside"], ["street", "5230 Centre Ave"], ["city", "Pittsburgh"], ["state", "PA"], ["zip", "15232"], ["phone", "5893050297"], ["active", 1]]
+D, [2020-04-22T19:25:59.760842 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.767486 #5048] DEBUG -- :   [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.767644 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.769005 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.769133 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.770006 #5048] DEBUG -- :   [1m[36mStore Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "stores" WHERE LOWER("stores"."name") = LOWER(?) LIMIT ?[0m  [["name", "Squirrel Hill"], ["LIMIT", 1]]
+D, [2020-04-22T19:25:59.770130 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.771036 #5048] DEBUG -- :   [1m[36mStore Create (0.2ms)[0m  [1m[32mINSERT INTO "stores" ("name", "street", "city", "state", "zip", "phone", "active") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Squirrel Hill"], ["street", "5604 Solway St"], ["city", "Pittsburgh"], ["state", "PA"], ["zip", "15217"], ["phone", "6591696823"], ["active", 1]]
+D, [2020-04-22T19:25:59.771220 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.777468 #5048] DEBUG -- :   [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+D, [2020-04-22T19:25:59.777624 #5048] DEBUG -- :   ↳ lib/tasks/helpers/stores.rb:17
+D, [2020-04-22T19:25:59.807732 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+D, [2020-04-22T19:25:59.807857 #5048] DEBUG -- :   ↳ lib/tasks/helpers/employees.rb:30
+D, [2020-04-22T19:26:00.000725 #5048] DEBUG -- :   [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+D, [2020-04-22T19:26:00.000867 #5048] DEBUG -- :   ↳ lib/tasks/helpers/employees.rb:30
+D, [2020-04-22T19:26:00.002797 #5048] DEBUG -- :   [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."ssn" = ? LIMIT ?[0m  [["ssn", "123456789"], ["LIMIT", 1]]
+D, [2020-04-22T19:26:00.002893 #5048] DEBUG -- :   ↳ lib/tasks/helpers/employees.rb:30
+D, [2020-04-22T19:26:00.004176 #5048] DEBUG -- :   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+D, [2020-04-22T19:26:00.004254 #5048] DEBUG -- :   ↳ lib/tasks/helpers/employees.rb:30
