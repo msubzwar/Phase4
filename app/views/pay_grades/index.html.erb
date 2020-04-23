@@ -1,0 +1,46 @@
+<h2>Listing All PayGrades</h2>
+<th >    Active PayGrades  </th>
+<table class="highlight"> 
+  <tr>
+    <th> Active</th>
+    <th>Level</th>
+  </tr>
+<% if @active_grades.count == 0%>
+<td>There are no active stores</td>
+<%else%>
+<% @active_grades.each do |pg| %>
+  <tr>
+    <td><%= pg.active %></td>
+    <td><%= pg.level%></td>
+
+    <td><%= link_to 'Edit', edit_pay_grade_path(pg),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Destroy', pay_grades_path, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
+
+  </tr>
+<% end %>
+<% end %>
+<% if @inactive_grades.count == 0%>
+<td>There are no active grades</td>
+<%else%>
+<% @inactive_grades.each do |pg| %>
+  <tr>
+    <td><%= pg.active %></td>
+    <td><%= pg.level%></td>
+    <td><%= link_to 'Edit', edit_pay_grade_path(pg),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Destroy', pay_grades_path, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
+
+  </tr>
+<% end %>
+<% end %>
+
+
+</table>
+<br />
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @paygrades, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>
+
+<br />
+
+<%= link_to 'New Shift', new_shift_path %>

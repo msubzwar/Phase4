@@ -1,4 +1,5 @@
 class AssignmentsController < ApplicationController
+    load_and_authorize_resource
   before_action :set_assignment, only: [:show, :edit, :terminate, :destroy]
 
   def index
@@ -9,7 +10,19 @@ class AssignmentsController < ApplicationController
 
   def new
     @assignment = Assignment.new
-    @assignment.employee_id = params[:employee_id] unless params[:employee_id].nil?
+   # @assignment.employee_id = params[:employee_id] unless params[:employee_id].nil?
+  end
+  
+  
+  def edit
+  end
+  
+def update
+    if @assignment.update_attributes(assignment_params)
+      redirect_to @assignment, notice: "Updated #{@assignment.proper_name}'s information."
+    else
+      render action: 'edit'
+    end
   end
 
   def create

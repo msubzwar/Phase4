@@ -1,0 +1,24 @@
+
+<p> Assignment</p>
+
+<p>Start Date</p>
+<p>
+  <%= @assignment.start_date %>
+</p>
+<p>End Date</p>
+<p>
+  <%= @assignment.end_date %>
+</p>
+<p>Store id</p>
+<p>
+  <%= @assignment.store_id %>
+</p>
+<p>Employee id</p>
+<p>
+  <%= @assignment.employee_id %>
+</p>
+
+
+<td><%= link_to 'Edit', edit_shift_path(@shift),:class=> "waves-effect waves-light btn light-blue" %></td>
+<td><%= link_to 'Back', shifts_path, :class=> "waves-effect waves-light btn red" %></td>
+

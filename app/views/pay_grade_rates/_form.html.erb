@@ -1,0 +1,44 @@
+<%= form_for(@pay_grade_rate) do |f| %>
+  <% if @pay_grade_rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pay_grade_rate.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @pay_grade_rate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr valign="top">
+			<td>
+				<h2>Pay Grade Rate Details:</h2>
+				
+			 <div class="input-field">
+	            <%= f.label :Rate %>
+                <%= f.text_field :rate %>
+			  </div>
+
+			 <div class="field">
+	            <%= f.label :Start_Date %>
+                <%= f.date_field :start_date %>
+			  </div>
+			  
+			 <div class="field">
+	            <%= f.label :End_Date %>
+                <%= f.date_field :end_date %>
+			  </div>
+
+</br>
+</br></br>
+</br></br>
+			  <div class="actions">
+                <%= f.submit :class=>"btn waves-effect waves-light" %>
+                <%= link_to 'Cancel', pay_grades_path, :class => 'waves-effect waves-light btn red' %>
+              </div>
+			</td>
+			<td width="25">&nbsp;</td>
+		</tr>
+	</table>
+<% end %>

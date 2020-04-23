@@ -1,8 +1,10 @@
 class EmployeesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   def index
     # for phase 3 only
+    @employees = Employee.all.active.paginate(page: params[:page]).per_page(10)
     @active_managers = Employee.managers.active.alphabetical.paginate(page: params[:page]).per_page(10)
     @active_employees = Employee.regulars.active.alphabetical.paginate(page: params[:page]).per_page(10)
     @inactive_employees = Employee.inactive.alphabetical.paginate(page: params[:page]).per_page(10)
@@ -11,6 +13,8 @@ class EmployeesController < ApplicationController
 
   def show
     retrieve_employee_assignments
+    @upcoming_shifts = Shift.for_employee(@employee).for_next_days(7).paginate(page: params[:page]).per_page(10)
+    @past_shifts = Shift.for_employee(@employee).for_past_days(7).paginate(page: params[:page]).per_page(10)
   end
 
   def new
@@ -46,7 +50,7 @@ class EmployeesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def employee_params
-    params.require(:employee).permit(:first_name, :last_name, :ssn, :phone, :date_of_birth, :role, :active)
+    params.require(:employee).permit(:first_name, :last_name, :ssn, :phone, :date_of_birth, :role,:username,:password,:password_confirmation, :active)
   end
 
   def retrieve_employee_assignments

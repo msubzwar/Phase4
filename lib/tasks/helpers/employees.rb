@@ -27,6 +27,9 @@ module Populator
       ae.phone = '412-268-3259'
       ae.role = 'admin'
       ae.active = true
+      ae.username = 'admin'
+      ae.password = 'secret'
+      ae.password_confirmation = 'secret'
       ae.save!
       
       # Step 1b: Add Mark as admin
@@ -38,6 +41,9 @@ module Populator
       me.phone = '412-268-8211'
       me.active = true
       me.role = 'admin'
+      me.username = 'user'
+      me.password = 'secret'
+      me.password_confirmation = 'secret'
       me.save!
     end
 

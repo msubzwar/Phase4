@@ -1,6 +1,11 @@
 <h2>Listing Active Assignments</h1>
 
-<table class="striped"> 
+<table class="highlight"> 
+
+<% if @current_assignments.count == 0 %>
+<tr>No current assignments</tr>
+<%else%>
+<% @current_assignments.each do |asg| %>
   <tr>
         <th>    Current Assignments   </th>
         <th>    Past Assignments      </th>
@@ -8,14 +13,44 @@
         <th>    Store Name            </th>
         <th>    Dates                 </th>
   </tr>
-
-<% @assignments.each do |asg| %>
   <tr>
      <td></td>
      <td></td>
      <td><%= link_to asg.employee.name, employee_path(asg.employee) %></td>
      <td><%= link_to asg.store.name, store_path(asg.store) %></td>
-    <td><%= link_to asg.start_date, assignments_index_path(asg) %> -Present
+    <td><%= link_to asg.start_date, assignments_path(asg) %> -Present
+        </br>
+        <% if asg.end_date !=nil %> 
+            <%= asg.end_date.month %>/<%= asg.end_date.day %>/<%= asg.end_date.year %>, 
+        <% else %>
+            -- ,
+        <% end %>
+        <%= asg.start_date.month %>/<%= asg.start_date.day %>/<%= asg.start_date.year %>
+    </td>
+    <td><%= link_to 'show', assignment_path(asg),:class=> "waves-effect waves-light btn light-green" %></td>
+    <td><%= link_to 'Edit', edit_assignment_path(asg),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Destroy',  assignments_path(asg), confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
+
+  </tr>
+<% end %>
+<% end %>
+<% if @past_assignments.count == 0 %>
+<tr>No current assignments</tr>
+<%else%>
+<% @past_assignments.each do |asg| %>
+  <tr>
+        <th>    Current Assignments   </th>
+        <th>    Past Assignments      </th>
+        <th>    Employee Name         </th>
+        <th>    Store Name            </th>
+        <th>    Dates                 </th>
+  </tr>
+  <tr>
+     <td></td>
+     <td></td>
+     <td><%= link_to asg.employee.name, employee_path(asg.employee) %></td>
+     <td><%= link_to asg.store.name, store_path(asg.store) %></td>
+    <td><%= link_to asg.start_date, assignments_path(asg) %> -Present
         </br>
         <% if asg.end_date !=nil %> 
             <%= asg.end_date.month %>/<%= asg.end_date.day %>/<%= asg.end_date.year %>, 
@@ -26,37 +61,20 @@
         <%= asg.start_date.month %>/<%= asg.start_date.day %>/<%= asg.start_date.year %>
     </td>
     
-  
-    <td><%= link_to 'Destroy',  assignments_index_path(asg), confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
+   <td><%= link_to 'show', assignment_path(asg),:class=> "waves-effect waves-light btn light-green" %></td>
+    <td><%= link_to 'Edit', edit_assignment_path(asg),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Destroy',  assignments_path(asg), confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
 
   </tr>
+<% end %>
 <% end %>
 </table>
 <br />
 <!-- Add the pagination using will_paginate gem -->
 <span class="paginate">
-<%= will_paginate @assignments, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+<%= will_paginate @current_assignments, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
 
 <br />
 
-<%= link_to 'New assignments', assignments_new_path %>
-
-  Scenario: View all assignments
-    When I go to the assignments page
-    Then I should see "Current Assignments"
-    And I should see "Past Assignments"
-    And I should see "Employee Name"
-    And I should see "Sisko, Ben"
-    And I should see "Store Name"
-    And I should see "CMU"
-    And I should see "Dates"
-    And I should see "8/17/19 - Present"
-    And I should see "2/14/18 - 8/17/19"
-    And I should not see "Hazelwood"
-    And I should not see "true"
-    And I should not see "True"
-    And I should not see "ID"
-    And I should not see "_id"
-    And I should not see "Created"
-    And I should not see "created"
+<%= link_to 'New assignments', new_assignment_path %>

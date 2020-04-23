@@ -1,0 +1,23 @@
+
+<p>
+  <b>Start Date </b>
+  <%= @pay_grade_rate.start_date %>
+</p>
+<p>All the Rates for Start date</p>
+<p>
+  <%= @pay_grade_rate.for_date(pgr.start_date)%>
+</p>
+
+<p>
+<% if @pay_grade_rate.end_date != nil %>
+  <b> End Date </b>
+      <%= @pay_grade_rate.end_date %>
+    <p>All the Rates for End date</p>
+      <%= @pay_grade_rate.for_date(@pay_grade_rate.end_date)%>
+ <%end%>
+
+</p>
+
+<td><%= link_to 'Edit', edit_pay_grade_path(@pay_grade),:class=> "waves-effect waves-light btn light-blue" %></td>
+<td><%= link_to 'Back', pay_grades_path, :class=> "waves-effect waves-light btn red" %></td>
+

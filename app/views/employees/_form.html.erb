@@ -1,11 +1,11 @@
-<%= form_for(@employees) do |f| %>
+<%= form_for(@employee) do |f| %>
 
-  <% if @employees.errors.any? %>
+  <% if @employee.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@employees.errors.count, "error") %> prohibited this employee from being saved:</h2>
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
       <ul>
-      <% @employees.errors.full_messages.each do |msg| %>
+      <% @employee.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -34,18 +34,32 @@
                 <%= f.text_field :ssn %>
              </div>
 			  
-			  <div class="input-field">
+			  <div class="field">
 			    <%= f.label :date_of_birth %>
-			    <%= f.text_field :date_of_birth, data:{ provide:'datepicker' } %>
+			    <%= f.date_field :date_of_birth, data:{ provide:'datepicker' } %>
 			     
 			  </div>
 			  
-			<div class="input-field">
+			<div class="field">
                 <%= f.label :role %>
-                <%= f.text_field :ssn %>
+                <%= f.select :role, ['admin', 'manager','employee'],include_blank: false %>
                 
 
              </div>
+             <% unless logged_in? %>
+             <div class="input-field">
+                <%= f.label :username %>
+                <%= f.text_field :username %>
+             </div>
+             <div class="input-field">
+                <%= f.label :Password %>
+                <%= f.text_field :password %>
+             </div>
+              <div class="input-field">
+                <%= f.label :Password_Confirmation %>
+                <%= f.text_field :password_confirmation %>
+             </div>
+             <%end%>
              
              
 			  <div class="actions">

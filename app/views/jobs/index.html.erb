@@ -1,0 +1,34 @@
+
+<h2>Listing all Jobs</h2>
+<th >    Active Stores  </th>
+<table class="highlight"> 
+  <tr>
+    <th> Date            </th>
+    <th>Start_Time</th>
+    <th>End_Time</th>
+  </tr>
+<% if @jobs.count == 0%>
+<td>There are no active stores</td>
+<%else%>
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%=  job.level %></td>
+    <td><%= job.active%></td>
+    
+    <td><%= link_to 'Edit', edit_job_path(job),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Destroy', jobs_path, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
+
+  </tr>
+<% end %>
+<% end %>
+
+</table>
+<br />
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @shifts, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>
+
+<br />
+
+<%= link_to 'New Job', new_job_path %>

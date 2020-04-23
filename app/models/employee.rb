@@ -66,9 +66,6 @@ class Employee < ApplicationRecord
     self.save!
   end
 
-  def certify_autograde
-    return -3554384015922413861
-  end
   
     def current_pay_grade
       return nil unless self.current_assignment != nil

@@ -13,8 +13,8 @@ class Shift < ApplicationRecord
   validates_time :end_time, after: :start_time, allow_blank: true
   validate :must_curr_assignment
   
-  scope :for_employee,  -> (employee_id){joins(:assignment, :employee).where("assignment.employee_id = ?", employee_id)}
-  scope :for_store,     ->    (store_id){joins(:assignment, :store).where("assignment.store_id = ?", store_id)}
+  scope :for_employee,  -> (employee_id) {joins(:assignment, :employee).where("assignments.employee_id = ?", employee_id)}
+  scope :for_store,     ->    (store_id){joins(:assignment, :store).where("assignments.store_id = ?", store_id)}
   scope :past,          ->              {where("date < ?",Date.current)}
   scope :upcoming,      ->              {where("date >= ?",Date.current)}
   scope :pending,       ->              {where("status = ?",'pending')}
@@ -27,7 +27,7 @@ class Shift < ApplicationRecord
   scope :incomplete,    ->  {joins('left join shift_jobs on shifts.id = shift_jobs.shift_id').where('Shift_jobs.job_id is NULL')}
   
   scope :for_next_days, ->          (x){ where('date <= ? AND date >= ?', x.days.from_now, Date.current)}
-  scope :for_past_days, ->          (x){ where('date >= ? AND date <  ?', x.days.days_ago.to_date, Date.current)}
+  scope :for_past_days, ->          (x){ where('date >= ? AND date <  ?', x.days.ago.to_date, Date.current)}
   scope :for_dates,     ->          (x){ where('date >= ? AND date <= ?', x.start_date, x.end_date)}
   
   def report_completed?
@@ -47,6 +47,7 @@ class Shift < ApplicationRecord
 
 # =>CallBacks
     before_create :set_end_time
+    
     before_destroy :destroy?
     
     private
@@ -69,7 +70,8 @@ class Shift < ApplicationRecord
     
         def set_end_time
             unless end_time.present?
-            end_time = self.start_time +(3*60*60)
+            end_time = start_time + (3*60*60)
+            return end_time
         end
     
 

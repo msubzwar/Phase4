@@ -18,11 +18,6 @@ class AbilityTest < ActiveSupport::TestCase
       assert @kathryn_ability.can? :manage, Shift
       assert @kathryn_ability.can? :manage, ShiftJob
 
-      assert @kathryn_ability.can? :index, Store
-      assert @kathryn_ability.can? :show, @oakland
-      deny @kathryn_ability.can? :show, @cmu
-      deny @kathryn_ability.can? :create, Store
-      deny @kathryn_ability.can? :update, Store
 
       assert @kathryn_ability.can? :index, Assignment
       assert @kathryn_ability.can? :show, @assign_ralph

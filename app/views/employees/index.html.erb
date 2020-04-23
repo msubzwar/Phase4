@@ -1,9 +1,13 @@
-<h1>Listing </h1>
+<h1>Listing Employess </h1>
 
-    <tr><td><th>Active Managers</th></td>  
-    <td><th> Active Employees</th></td>
-    </tr>
+    <h5>Active List of Employess</h5>  
+
 <table class="highlight"> 
+
+
+<% if @active_managers.count == 0%>
+<tr>No active managers</tr>
+<%else%>
   <tr>
     <th>    Employee Name   </th>
     <th>    Role            </th>
@@ -11,7 +15,8 @@
     <th> Current Assignment </th>
   </tr>
 
-<% @employees.regulars.active.each do |employee| %>
+<% @active_managers.each do |employee| %>
+
   <tr>
     <td><%= link_to employee.name, employee_path(employee) %></td>
     <td><%= link_to employee.role.capitalize, employee_path(employee) %></td>
@@ -22,7 +27,19 @@
     <td><%= link_to 'Destroy', employee, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
   </tr>
 <% end %>
-<% @employees.managers.active.each do |employee| %>
+<% end %>
+
+<% if @active_employees.count == 0%>
+<tr>No active employees</tr>
+<%else%>
+<td><th> Active Employees</th></td>
+<% @active_employees.active.each do |employee| %>
+  <tr>
+    <th>    Employee Name   </th>
+    <th>    Role            </th>
+    <th>    Phone           </th>
+    <th> Current Assignment </th>
+  </tr>
   <tr>
     <td><%= link_to employee.name, employee_path(employee) %></td>
     <td><%= link_to employee.role.capitalize, employee_path(employee) %></td>
@@ -33,6 +50,30 @@
     <td><%= link_to 'Destroy', employee, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
   </tr>
 <% end %>
+<% end %>
+<% if @inactive_employees.count == 0%>
+<td>inactive Employees</td>
+<%else%>
+<td><th> Active Employees</th></td>
+<% @inactive_employees.each do |employee| %>
+  <tr>
+    <th>    Employee Name   </th>
+    <th>    Role            </th>
+    <th>    Phone           </th>
+    <th> Current Assignment </th>
+  </tr>
+  <tr>
+    <td><%= link_to employee.name, employee_path(employee) %></td>
+    <td><%= link_to employee.role.capitalize, employee_path(employee) %></td>
+    <td><%=  employee.phone.insert(0, '').insert(3, '-').insert(7, '-')  %></td>
+    <td><%= employee.assignments.first.store.name %></td>
+    <td><%= link_to 'Detail', employee_path(employee),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Destroy', employee, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
+  </tr>
+<% end %>
+<% end %>
+
 </div>
 </table>
 <br/>
@@ -40,7 +81,7 @@
 <br/>
 <!-- Add the pagination using will_paginate gem -->
 <span class="paginate">
-<%= will_paginate @employees, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+<%= will_paginate @active_employees, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
 
 <br />

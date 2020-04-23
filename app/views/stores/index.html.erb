@@ -1,17 +1,18 @@
 <h2>Listing Active Stores</h2>
-
+<th >    Active Stores  </th>
 <table class="highlight"> 
   <tr>
-    <th>    Active Stores  </th>
     <th> Name              </th>
     <th>Current Assignments</th>
     <th>Phone</th>
   </tr>
-
-<% @stores.active.each do |store| %>
+<% if @active_stores.count == 0%>
+<td>There are no active stores</td>
+<%else%>
+<% @active_stores.each do |store| %>
   <tr>
     <td><%= link_to store.name, store_path(store) %></td>
-    <td></td>
+    <td><% store.assignments.for_store(store)%></td>
     <td><%= store.phone.insert(0, '').insert(3, '-').insert(7, '-') %></td>
     
     <td><%= link_to 'Edit', edit_store_path(store),:class=> "waves-effect waves-light btn light-blue" %></td>
@@ -19,15 +20,21 @@
 
   </tr>
 <% end %>
+<%end%>
+<% if @inactive_stores.count == 0%>
+<td>There are no inactive stores</td>
+<%else%>
 <th>    inActive Stores  </th>
-<% @stores.inactive.each do |store| %>
+<% @inactive_stores.each do |store| %>
   <tr>
     <td><%= link_to store.name, store_path(store) %></td>
     <td><%= link_to 'Edit', edit_store_path(store),:class=> "waves-effect waves-light btn light-blue" %></td>
     <td><%= link_to 'Destroy', store, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
 
   </tr>
-<% end %>
+<% end %><% end %>
+
+
 </table>
 <br />
 <!-- Add the pagination using will_paginate gem -->

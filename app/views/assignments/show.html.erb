@@ -1,2 +1,36 @@
-<h1>Assignments#show</h1>
-<p>Find me in app/views/assignments/show.html.erb</p>
+
+<p> Assignment</p>
+
+<p>Start Date</p>
+<p>
+  <%= @assignment.start_date %>
+</p>
+<p>End Date</p>
+<p>
+  <%= @assignment.end_date %>
+</p>
+<p>Store id</p>
+<p>
+  <%= @assignment.store_id %>
+</p>
+<p>assignment_id id</p>
+<p>
+  <%= @assignment.employee_id %>
+</p>
+<p>Upcoming Shifts</p>
+<p>
+  <%= @assignment.shifts.each do |shift| %>
+      <% if shift.status == 'pending'%>
+          <%=  shift.duration %>
+          <% end%>
+      <% if shift.status == 'finished'%>
+          <%=  shift.duration %>
+    <% end%>
+<% end%>
+
+
+</table>
+
+<td><%= link_to 'Edit', edit_assignment_path(@assignment),:class=> "waves-effect waves-light btn light-blue" %></td>
+<td><%= link_to 'Back', assignments_path, :class=> "waves-effect waves-light btn red" %></td>
+

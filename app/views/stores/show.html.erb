@@ -1,23 +1,25 @@
 <p>Name</p>
 <p>
-  <%= @stores.name %>
+  <%= @store.name %>
 </p>
 <p>
     <b>Phone</b>
-    <%= @stores.phone.insert(0, '').insert(3, '-').insert(7, '-') %>
+    <%= @store.phone.insert(0, '').insert(3, '-').insert(7, '-') %>
 </p>
 <p>
   <b>Manager(s) </b>
-  <% @stores.employees.managers.active.each do |s| %>
+  <% @store.employees.managers.active.each do |s| %>
       <%= s.name %>
  <% end %>
+
+
   
 </br>
   </br>
   <b>Current employees</b>
 <table>
     <tr>
-    <% @stores.assignments.current.each do |s| %>
+    <% @store.assignments.current.each do |s| %>
                 <td><%= s.employee.name %></td>
          
          <% end %>
@@ -29,11 +31,11 @@
 <th>----------------</th>
 <tr>
 
-  <td><p><%= @stores.street %></p></td>
-  <td><p><%= @stores.city %>,  <%= @stores.state %> <%= @stores.zip %></p></td> 
+  <td><p><%= @store.street %></p></td>
+  <td><p><%= @store.city %>,  <%= @store.state %> <%= @store.zip %></p></td> 
 
 </tr>
 </table>
-<td><%= link_to 'Edit', edit_store_path(@stores),:class=> "waves-effect waves-light btn light-blue" %></td>
+<td><%= link_to 'Edit', edit_store_path(@store),:class=> "waves-effect waves-light btn light-blue" %></td>
 <td><%= link_to 'Back', stores_path, :class=> "waves-effect waves-light btn red" %></td>
 

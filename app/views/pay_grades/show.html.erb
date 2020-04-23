@@ -1,0 +1,23 @@
+<p>Level</p>
+<p>
+  <%= @pay_grade.level %>
+</p>
+
+<p>
+  <b>Active (s) </b>
+  <%= @pay_grade.active %>
+
+  </br>
+  </br>
+  <b>All Pay Rates</b>
+<table>
+    <tr>
+    <% @pay_grade.pay_grade_rates.each do |s| %>
+            <td><%= link_to s.name, pay_grade_rate_path(s.id) %></td>
+   <% end %>
+    </tr>
+</table>
+
+<td><%= link_to 'Edit', edit_pay_grade_path(@pay_grade),:class=> "waves-effect waves-light btn light-blue" %></td>
+<td><%= link_to 'Back', pay_grades_path, :class=> "waves-effect waves-light btn red" %></td>
+

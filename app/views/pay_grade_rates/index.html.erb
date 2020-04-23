@@ -1,0 +1,38 @@
+<h2>Listing All Pay Grade Rates</h2>
+<th >    Active Pay Grade Rate  </th>
+<table class="highlight"> 
+  <tr>
+    <th> Rate</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+<% if @current_rate.count == 0%>
+<td>There are no active stores</td>
+<%else%>
+<% @current_rate.each do |pgr| %>
+  <tr>
+    <td><%= pgr.rate %></td>
+    <td><%= link_to pgr.start_date, pay_grade_rate_path(pgr)%></td>
+    <% if pgr.end_date != nil %>
+        <td><%= link_to pgr.end_date, pay_grade_rate_path(pgr)%></td>
+    <% else %>
+        <td> - </td>
+    <% end %>
+        
+    <td><%= link_to 'Edit', edit_pay_grade_rate_path(pgr),:class=> "waves-effect waves-light btn light-blue" %></td>
+    <td><%= link_to 'Destroy', pay_grade_rates_path, confirm: 'Are you sure?', method: :delete, :class=> "waves-effect waves-light btn red" %></td>
+  </tr>
+<% end %>
+<% end %>
+
+
+</table>
+<br />
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @current_rate, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>
+
+<br />
+
+<%= link_to 'New Pay Grade Rate', new_pay_grade_rate_path %>

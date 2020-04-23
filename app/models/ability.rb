@@ -5,45 +5,56 @@ class Ability
 
   def initialize(user)
     # Define abilities for the passed in user here. For example:
-    #
-    #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
-    #     can :manage, :all
-    #   else
-    #     can :read, :all
-    #   end
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-    user ||= User.new # guest user (not logged in)
+  
+    user ||= Employee.new # guest user (not logged in)
     
       if user.role? :admin
         can :manage, :all
       elsif user.role? :manager
-        can :index, Employees 
-        can :edit , Employees
-        # can :delete, Shift
-        can :show, Shifts
-        can :index, Shifts
+        can :index, Employee
+        can :show,  Employee do |e|
+           user.current_assignment.store.id == e.current_assignment.store.id
+        end
+        can :edit,  Employee do |e|
+           user.current_assignment.store.id == e.current_assignment.store.id
+        end
+        can :update,  Employee do |e|
+           user.current_assignment.store.id == e.current_assignment.store.id
+        end
+        can :index, Assignment
         
+        can :show, Assignment do |a|
+            all_assignment = Assignment.current.for_store(user.current_assignment.store).map{|a| a.id}
+            all_assignment.include?(a.id)
+        end 
+        
+        can :manage,    ShiftJob
+        can :manage,    Shift
+        # can :new,       Shift 
+        # can :edit,      Shift
+        # can :destroy,   Shift
+        # can :show,      Shift
+        can :index,     Job
+        can :show,      Job
+        can :new,       Job
+        
+        
+      elsif user.role? :employee
+        can :index, Assignment
+        
+        can :show,  Employee do |e|
+           user.id == e.id
+        end
+        can :show, Assignment do |a|
+            user.id== a.employee.id
+        end
+        can :edit, Employee do |a|
+            user.id== a.id
+        end
+        can :update, Employee do |a|
+            user.id== a.id
+        end
+    
     end
-
-  
-  
-  end
+end
 end
